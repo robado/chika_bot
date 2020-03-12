@@ -4,21 +4,39 @@ print("==========")
 
 import discord
 import os
-from discord.ext import commands
+from discord.ext import commands, tasks
+from itertools import cycle
 
 chika = commands.Bot(command_prefix='.')
+status = cycle(['Status 1', 'Status 2'])
+TOKEN = 'token'
+
 
 # Events
-"""@chika.event
+@chika.event
 async def on_ready():
+    change_status.start()
+    await chika.change_presence(status=discord.Status.idle, activity=discord.Game('Hello Chika'))
     print("Bot is ready")
-"""
 
 
+# @chika.event
+# async def on_message(message):
+#     id = chika.get_guild(646815478244704267)
+#
+#     if message.content.find("!hello") != -1:
+#         await message.channel.send("Hi")
+#     elif message.content == "!users":
+#         await message.channel.send(f"""# of Members: {id.member_count}""")  # We can use id.member_count
 
+
+# Sends a msg on user join
 @chika.event
 async def on_member_join(member):
-    print('{} has joined a server.'.format(member))
+    for channel in member.guild.channels:
+        if str(channel) == 'konnichiwa':
+            await channel.send(f'Welcome to the Chika server {member.mention}')
+    # print('{} has joined a server.'.format(member))
 
 
 @chika.event
@@ -26,11 +44,19 @@ async def on_member_remove(member):
     print(f'{member} has left the server.')
 
 
+# @chika.event
+# async def on_command_error(ctx, error):
+#    if isinstance(error, commands.CommandNotFound):
+#        await ctx.send('Invalid command')
+# if isinstance(error, commands.MissingRequiredArgument):
+# await ctx.send('Please pass all required arguments')
+
+
 # Commands
 # bot says konnichiwa
 @chika.command()
 async def konnichiwa(ctx):
-    await ctx.send("Konnichiwa")
+    await ctx.send(f'Konnichiwa {ctx.author}')
 
 
 # send text
@@ -41,8 +67,16 @@ async def send(ctx, *, args):
 
 # clears text
 @chika.command()
-async def clear(ctx, amount=5):
+@commands.has_permissions(manage_messages=True)  # check if you have permissions to use this command
+# async def clear(ctx, amount=5):
+async def clear(ctx, amount: int):
     await ctx.channel.purge(limit=amount)
+
+
+# @clear.error
+# async def clear_error(ctx, error):
+#     if isinstance(error, commands.MissingRequiredArgument):
+#         await ctx.send('Please specify amount of messages to delete')
 
 
 # kick and ban
@@ -90,4 +124,23 @@ for filename in os.listdir('./cogs'):
     if filename.endswith('.py'):
         chika.load_extension(f'cogs.{filename[:-3]}')
 
-chika.run('token here')
+
+# tasks
+@tasks.loop(seconds=10)
+async def change_status():
+    await chika.change_presence(activity=discord.Game(next(status)))
+
+
+# checks user id
+def is_it_me(ctx):
+    return ctx.author.id == 687727835712192534  # specific user id
+
+
+# checks if command matches user id
+@chika.command()
+@commands.check(is_it_me)
+async def example(ctx):
+    await ctx.send(f'Hi i am {ctx.author}')
+
+
+chika.run(TOKEN)

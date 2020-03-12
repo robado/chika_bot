@@ -10,6 +10,7 @@ class Example(commands.Cog):
     # Event
     @commands.Cog.listener()
     async def on_ready(self):
+        # await self.chika.change_presence(status=discord.Status.idle, activity=discord.Game('Hello Chika'))
         print("Bot is ready")
 
     # Commands
