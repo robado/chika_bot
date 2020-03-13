@@ -15,7 +15,7 @@ Ideas of function for this bot
 
 
 ## Usefull links
-* [Discord.py documents](https://discordpy.readthedocs.io/en/latest/)
+* [Discord.py documentation](https://discordpy.readthedocs.io/en/latest/)
 * [Helpful youtube tutorial by Lucas](https://www.youtube.com/watch?v=nW8c7vT6Hl4&list=PLW3GfRiBCHOhfVoiDZpSz8SM_HybXRPzZ)
 * [Another useful tutorial by techwithtim](https://techwithtim.net/tutorials/discord-py/)
 ---
