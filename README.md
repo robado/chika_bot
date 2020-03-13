@@ -1,6 +1,11 @@
 # Discord Chika Fujiwara Bot
 Attempt to make some kind of an awesome Discord bot using [discord.py](https://discordpy.readthedocs.io/en/latest/).
 
+## Table of context 
+- [To-do List](#to-do-list)
+- [How to run locally](#how-to-run-locally)
+- [Useful links](#useful-links)
+
 ## To-Do List
 Ideas of function for this bot
 
@@ -17,8 +22,11 @@ Ideas of function for this bot
     * Either a specific one or a random
 * Deploy to [heroku](https://www.heroku.com/)
     * It has a free plane for hobbyist!
-
-## Usefull links
+    
+## How to run locally
+Firstly create a token.txt where you will store your bots token. This file is excluded from GitHub repository because
+ bots have uniques tokens.  
+## Useful links
 * [Discord.py documentation](https://discordpy.readthedocs.io/en/latest/)
 * [Helpful youtube tutorial by Lucas](https://www.youtube.com/watch?v=nW8c7vT6Hl4&list=PLW3GfRiBCHOhfVoiDZpSz8SM_HybXRPzZ)
 * [Another useful tutorial by techwithtim](https://techwithtim.net/tutorials/discord-py/)

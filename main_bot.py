@@ -1,15 +1,24 @@
-print("==========")
-print("Chika Bot")
-print("==========")
-
 import discord
 import os
 from discord.ext import commands, tasks
 from itertools import cycle
 
-chika = commands.Bot(command_prefix='.')
+print("==========")
+print("Chika Bot")
+print("==========")
+
+chika = commands.Bot(command_prefix='chika')
 status = cycle(['Status 1', 'Status 2'])
-TOKEN = 'token'
+
+
+def read_token():
+    with open("token.txt") as token:
+        line = token.readlines()
+        return line[0].strip()
+
+
+TOKEN = read_token()
+print(TOKEN)
 
 
 # Events
@@ -33,9 +42,12 @@ async def on_ready():
 # Sends a msg on user join
 @chika.event
 async def on_member_join(member):
-    for channel in member.guild.channels:
-        if str(channel) == 'konnichiwa':
-            await channel.send(f'Welcome to the Chika server {member.mention}')
+    channel = chika.get_channel(687060036303978501)
+    await channel.send(f'Welcome to the Chika server {member.mention}')
+    # await channel.send('http://i.imgur.com/TrNnPde.jpg%27')
+    # for channel in member.guild.channels:
+    # if str(channel) == 'konnichiwa':
+    # await channel.send(f'Welcome to the Chika server {member.mention}')
     # print('{} has joined a server.'.format(member))
 
 
