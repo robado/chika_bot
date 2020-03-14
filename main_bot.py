@@ -44,7 +44,11 @@ async def on_ready():
 @chika.event
 async def on_member_join(member):
     channel = chika.get_channel(687060036303978501)
-    await channel.send(f'Welcome to the Chika server {member.mention}')
+    file = discord.File("gifs/chikaWelcome.gif", filename="chikaWelcome.gif")
+    embed = discord.Embed()
+    embed.set_image(url="attachment://chikaWelcome.gif")
+    await channel.send(f'Welcome to the Chika server {member.mention}', file=file, embed=embed)
+    # await channel.send(f'Welcome to the Chika server {member.mention}')
     # await channel.send('http://i.imgur.com/TrNnPde.jpg%27')
     # for channel in member.guild.channels:
     # if str(channel) == 'konnichiwa':

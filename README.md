@@ -16,6 +16,8 @@ Ideas of function for this bot
 * Welcome message on user joining
     * Displays a welcoming message and a pic or a gif
 * Embedded messages
+* Add errors for necessary commands or actions
+    * And error for every command/action would be great - but probably not necessary
 * Chika can give a cola
     * Displays a picture of Chika giving a cola and mentions a user
 * Randomly spams a Chika gif or pic
