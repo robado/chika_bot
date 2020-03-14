@@ -36,13 +36,13 @@ Ideas of function for this bot
 Running locally you need to Python 3.7, pip 20.0.2 and pipenv==2018.11.26. (These are the versions I used to make
  this bot, but probably with earlier version it would work).
 
-###`Installing Python`  
+`Installing Python`  
 Python you can download from [Python website](https://www.python.org/downloads/).
 
-###`Pip`  
+`Pip`  
 Pip should come when you install Python. But if not for some reason you can install it via this [link](https://pip.pypa.io/en/stable/installing/)
 
-###`pipenv`  
+`pipenv`  
 Pipenv can be installed via this [link](https://pipenv-fork.readthedocs.io/en/latest/install.html#pragmatic-installation-of-pipenv)
 
 ###`Running bot locally`  
