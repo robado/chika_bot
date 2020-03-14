@@ -22,6 +22,7 @@ Ideas of function for this bot
     * Displays a picture of Chika giving a cola and mentions a user
 * Chika dance
     * Chika dance gif
+* Add daily a image related to Chika anime
 * Randomly spams a Chika gif or pic
     * When giving a commands bot will spam gif or a pic
 * Role specific commands
