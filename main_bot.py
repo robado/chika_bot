@@ -70,10 +70,10 @@ async def on_member_remove(member):
 
 
 # Commands
-# bot says konnichiwa
+# bot says konnichiwa and mentions the user
 @chika.command()
 async def konnichiwa(ctx):
-    await ctx.send(f'Konnichiwa {ctx.author}')
+    await ctx.send(f'Konnichiwa {ctx.message.author.mention}')
 
 
 # send text

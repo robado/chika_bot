@@ -20,6 +20,8 @@ Ideas of function for this bot
     * And error for every command/action would be great - but probably not necessary
 * Chika can give a cola
     * Displays a picture of Chika giving a cola and mentions a user
+* Chika dance
+    * Chika dance gif
 * Randomly spams a Chika gif or pic
     * When giving a commands bot will spam gif or a pic
 * Role specific commands
