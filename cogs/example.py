@@ -11,10 +11,10 @@ class Example(commands.Cog):
     @commands.Cog.listener()
     async def on_ready(self):
         # await self.chika.change_presence(status=discord.Status.idle, activity=discord.Game('Hello Chika'))
-        print("Bot is ready")
+        print("Bots cogs are ready")
 
     # Commands
-    @commands.command()
+    @commands.command(brief='Ping', description='Pongs you back')
     async def ping(self, ctx):
         await ctx.send("Pong!")
 

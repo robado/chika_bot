@@ -13,9 +13,20 @@ Attempt to make some kind of an awesome Discord bot using [discord.py](https://d
 ## To-Do List
 Ideas of function for this bot
 
-* Welcome message on user joining
-    * Displays a welcoming message and a pic or a gif
+* Welcome message on user joining  
+    * ~~Displays a welcoming message~~ 
+    * ~~With message display a pic~~ 
+    * Or a gif
+    * Add a helpful tip to footer f.ex what is the prefix
+    * Send joined member a private message? 
+    * Randomize a welcoming message
 * Embedded messages
+    * In welcome message
+    * when command send message (when necessary)
+* Make a help commands to show all the commands + explanations
+    * Either modify old one
+        * By adding *brief* & *description* to *command()*
+    * Or make a brand new one
 * Add errors for necessary commands or actions
     * And error for every command/action would be great - but probably not necessary
 * Chika can give a cola
@@ -25,10 +36,20 @@ Ideas of function for this bot
 * Add daily a image related to Chika anime
 * Randomly spams a Chika gif or pic
     * When giving a commands bot will spam gif or a pic
+* Move code commands & events to cogs
+    * For code tidiness
+* Store data (mayba)
+    * For example users
+    * How many messages was sent
 * Role specific commands
     * For example admins have ban, kick. Mods could have rename
-* Change users nickname
-    * Either a specific one or a random
+* Restrict on commands on channels
+    * Restrict where specific commands can be used on which channels
+* Add config file for config stuff
+    * For example token
+* Change users nickname??
+    * Either a specific one or a random??
+
 
 ##### Stuff for later
 * Make bot run in Docker container
@@ -50,7 +71,7 @@ Pipenv can be installed via this [link](https://pipenv-fork.readthedocs.io/en/la
 
 ### `Running bot locally`  
 Finally when you have everything installed you can build this project and run locally. 
-
+* This will be updated! Currently no instructions on how to run locally.
 
 Firstly create a token.txt where you will store your bots token. This file is excluded from GitHub repository because
  bots have uniques tokens.  

@@ -2,12 +2,24 @@ import discord
 import os
 from discord.ext import commands, tasks
 from itertools import cycle
+import json
 
 print("==========")
 print("Chika Bot")
 print("==========")
 
-chika = commands.Bot(command_prefix='chika')
+# custom prefix
+# def get_prefix(client, message):
+#    with open('pefixes.json', 'r') as f:
+#        prefixes = json.load(f)
+#
+#    return prefixes[str(message.guild.id)]
+
+
+# chika = commands.Bot(command_prefix=get_prefix())
+command_prefix = 'chika'
+
+chika = commands.Bot(command_prefix=command_prefix)
 status = cycle(['Status 1', 'Status 2'])
 
 
@@ -44,10 +56,30 @@ async def on_ready():
 @chika.event
 async def on_member_join(member):
     channel = chika.get_channel(687060036303978501)
+    colour = discord.colour.Color.red()
     file = discord.File("gifs/chikaWelcome.gif", filename="chikaWelcome.gif")
-    embed = discord.Embed()
-    embed.set_image(url="attachment://chikaWelcome.gif")
+
+    embed = discord.Embed(title='Chika Fujiwara',
+                          description=
+                          '''
+                          Welcome to the best Chika server! 
+                          
+                          Lets make this best server ever existing!
+                          
+                          ''',
+                          colour=colour)
+    embed.set_image(url='attachment://chikaWelcome.gif')
+    embed.set_footer(text='For help type chikahelp')
+
+    embed.add_field(name='Remember!', value='Weebs are allowed but also '
+                                            'everyone else!')
+    # with {
+    # member.mention} user can
+    # be
+    # mentioned
+
     await channel.send(f'Welcome to the Chika server {member.mention}', file=file, embed=embed)
+
     # await channel.send(f'Welcome to the Chika server {member.mention}')
     # await channel.send('http://i.imgur.com/TrNnPde.jpg%27')
     # for channel in member.guild.channels:
@@ -71,7 +103,7 @@ async def on_member_remove(member):
 
 # Commands
 # bot says konnichiwa and mentions the user
-@chika.command()
+@chika.command(brief='brief', description='decription')
 async def konnichiwa(ctx):
     await ctx.send(f'Konnichiwa {ctx.message.author.mention}')
 
@@ -137,6 +169,7 @@ async def reload(ctx, extension):
     chika.load_extension(f'cogs.{extension}')
 
 
+# get all the cogs
 for filename in os.listdir('./cogs'):
     if filename.endswith('.py'):
         chika.load_extension(f'cogs.{filename[:-3]}')
