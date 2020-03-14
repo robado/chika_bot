@@ -11,6 +11,7 @@ chika = commands.Bot(command_prefix='chika')
 status = cycle(['Status 1', 'Status 2'])
 
 
+# Reads the token from file
 def read_token():
     with open("token.txt") as token:
         line = token.readlines()
