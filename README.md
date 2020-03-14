@@ -45,7 +45,7 @@ Pip should come when you install Python. But if not for some reason you can inst
 ### `pipenv`  
 Pipenv can be installed via this [link](https://pipenv-fork.readthedocs.io/en/latest/install.html#pragmatic-installation-of-pipenv)
 
-###`Running bot locally`  
+### `Running bot locally`  
 Finally when you have everything installed you can build this project and run locally. 
 
 
