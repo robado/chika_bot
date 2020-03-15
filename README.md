@@ -45,6 +45,8 @@ Ideas of function for this bot
     * For example admins have ban, kick. Mods could have rename
 * Restrict on commands on channels
     * Restrict where specific commands can be used on which channels
+        * ~~ban, unban, kick for admin only~~
+* Send DM
 * Add config file for config stuff
     * For example token
 * Change users nickname??
