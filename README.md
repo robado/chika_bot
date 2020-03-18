@@ -30,10 +30,10 @@ Ideas of function for this bot
 * Add errors for necessary commands or actions
     * And error for every command/action would be great - but probably not necessary
 * Chika can give a cola
-    * Displays a picture of Chika giving a cola 
-    * Sender can specify user
-    * Mentions a user
-    * If no user was mentioned than mention sender
+    * ~~Displays a picture of Chika giving a cola~~ 
+    * ~~Sender can specify user~~
+    * ~~Mentions a user~~
+    * ~~If no user was mentioned then mention sender~~
 * Chika dance
     * Chika dance gif
 * Add daily a image related to Chika anime
