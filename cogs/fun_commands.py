@@ -7,6 +7,11 @@ class FunCommands(commands.Cog):
     def __init__(self, chika):
         self.chika = chika
 
+    # ping chika.py and chika.py pong back
+    @commands.command(brief='Ping', description='Pongs you back')
+    async def ping(self, ctx):
+        await ctx.send("Pong!")
+
     # bot says konnichiwa and mentions the user
     @commands.command(brief='brief', description='decription')
     async def konnichiwa(self, ctx):
@@ -16,16 +21,6 @@ class FunCommands(commands.Cog):
     @commands.command()
     async def send(self, ctx, *, args):
         await ctx.send(args)
-
-    # checks user id
-    def is_it_me(self, ctx):
-        return ctx.author.id == 239135830327689217  # specific user id
-
-    # checks if command matches user id
-    @commands.command()
-    @commands.check(is_it_me)
-    async def thisisme(self, ctx):
-        await ctx.send(f'Hi i am {ctx.author}')
 
 
 def setup(chika):

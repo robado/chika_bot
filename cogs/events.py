@@ -10,7 +10,7 @@ class Events(commands.Cog):
     # Event
     @commands.Cog.listener()
     async def on_ready(self):
-        await self.chika.change_presence(status=discord.Status.idle, activity=discord.Game('Hello I\'m Chika'))
+        await self.chika.change_presence(status=discord.Status.online, activity=discord.Game('Hello I\'m Chika'))
         print("==========")
         print("Chika Bot")
         print("==========")

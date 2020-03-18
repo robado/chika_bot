@@ -21,7 +21,7 @@ Ideas of function for this bot
     * Send joined member a private message? 
     * Randomize a welcoming message
 * Embedded messages
-    * In welcome message
+    * ~~In welcome message~~
     * when command send message (when necessary)
 * Make a help commands to show all the commands + explanations
     * Either modify old one
@@ -30,7 +30,10 @@ Ideas of function for this bot
 * Add errors for necessary commands or actions
     * And error for every command/action would be great - but probably not necessary
 * Chika can give a cola
-    * Displays a picture of Chika giving a cola and mentions a user
+    * Displays a picture of Chika giving a cola 
+    * Sender can specify user
+    * Mentions a user
+    * If no user was mentioned than mention sender
 * Chika dance
     * Chika dance gif
 * Add daily a image related to Chika anime
