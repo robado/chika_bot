@@ -36,11 +36,15 @@ Ideas of function for this bot
     * ~~If no user was mentioned then mention sender~~
 * Chika dance
     * Chika dance gif
+* Chika can bong you
+    * ~~Send a gif with chika bong~~
+    * ~~Mention user and the bonging person~~
+    * If no user was tagged give an error
 * Add daily a image related to Chika anime
 * Randomly spams a Chika gif or pic
     * When giving a commands bot will spam gif or a pic
-* Move code commands & events to cogs
-    * For code tidiness
+* ~~Move code commands & events to cogs~~
+    * ~~For code tidiness~~
 * Store data (mayba)
     * For example users
     * How many messages was sent

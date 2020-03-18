@@ -21,6 +21,15 @@ class Chika(commands.Cog):
 
         await ctx.send(file=file, embed=embed)
 
+    @commands.command(brief='Cola', description='Chika gives you or your friend a cola')
+    async def bong(self, ctx, member: discord.Member = None):
+        embed = discord.Embed(title='', description=f'{ctx.message.author.mention} hits {member.mention} with a broom')
+        file = discord.File('gifs/chikaBong.gif', filename='chikaBong.gif')
+
+        embed.set_image(url='attachment://chikaBong.gif')
+
+        await ctx.send(file=file, embed=embed)
+
 
 def setup(chika):
     chika.add_cog(Chika(chika))
