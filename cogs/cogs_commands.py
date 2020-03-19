@@ -7,6 +7,7 @@ Error checking must be add
 
 
 class CogsCommands(commands.Cog):
+    """ Need to add CommandNotFound error handling if for example command is mistyped """
 
     def __init__(self, chika):
         self.chika = chika
@@ -38,7 +39,7 @@ class CogsCommands(commands.Cog):
         except Exception as e:
             return await ctx.send('{}: {}'.format(type(e).__name__, e))
         else:
-            await ctx.send(f'Loaded extension {extension}')
+            await ctx.send(f'Reloaded extension {extension}')
 
 
 def setup(chika):

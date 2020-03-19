@@ -7,7 +7,8 @@ class Chika(commands.Cog):
     def __init__(self, chika):
         self.chika = chika
 
-    @commands.command(brief='Cola', description='Chika gives you or your friend a cola')
+    @commands.command(brief='Cola', description='Chika gives you or your friend a cola')  # Gives either yourself a
+    # cola or to another user
     async def cola(self, ctx, member: discord.Member = None):
         if member:
             embed = discord.Embed(title='', description=f'Here is your cola {member.mention}')
@@ -21,14 +22,24 @@ class Chika(commands.Cog):
 
         await ctx.send(file=file, embed=embed)
 
-    @commands.command(brief='Cola', description='Chika gives you or your friend a cola')
+    @commands.command(brief='Bong', description='Chika bongs someone')  # Bongs user
     async def bong(self, ctx, member: discord.Member = None):
-        embed = discord.Embed(title='', description=f'{ctx.message.author.mention} hits {member.mention} with a broom')
-        file = discord.File('gifs/chikaBong.gif', filename='chikaBong.gif')
+        if not member:
+            embed = discord.Embed(title='',
+                                  description=f'You need to @ a user!')
+            file = discord.File('gifs/chikaAngry.gif', filename='chikaAngry.gif')
 
-        embed.set_image(url='attachment://chikaBong.gif')
+            embed.set_image(url='attachment://chikaAngry.gif')
 
-        await ctx.send(file=file, embed=embed)
+            await ctx.send(file=file, embed=embed)
+        else:
+            embed = discord.Embed(title='',
+                                  description=f'{ctx.message.author.mention} bongs {member.mention} with a paper broom')
+            file = discord.File('gifs/chikaBong.gif', filename='chikaBong.gif')
+
+            embed.set_image(url='attachment://chikaBong.gif')
+
+            await ctx.send(file=file, embed=embed)
 
 
 def setup(chika):

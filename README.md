@@ -36,10 +36,11 @@ Ideas of function for this bot
     * ~~If no user was mentioned then mention sender~~
 * Chika dance
     * Chika dance gif
+        * Choose a random "Chika dance" gif from giphy or tenor
 * Chika can bong you
     * ~~Send a gif with chika bong~~
     * ~~Mention user and the bonging person~~
-    * If no user was tagged give an error
+    * ~~If no user was tagged give an error~~
 * Add daily a image related to Chika anime
 * Randomly spams a Chika gif or pic
     * When giving a commands bot will spam gif or a pic
