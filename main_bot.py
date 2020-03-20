@@ -15,6 +15,13 @@ def read_token():
 
 TOKEN = read_token()
 
+# Get random images/gifs locally on specific subject
+
+# Get random images/gifs from internet on specific subject
+
+# https://stackoverflow.com/questions/53218027/how-would-i-use-the-giphy-python-api-with-my-discord-bot
+# https://github.com/MRmlik12/Tenor-Bot-Discord/blob/master/tenor.py
+
 # get all the cogs
 for filename in os.listdir('./cogs'):
     if filename.endswith('.py'):

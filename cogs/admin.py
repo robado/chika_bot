@@ -14,19 +14,23 @@ class Admin(commands.Cog):
     async def clear(self, ctx, amount: int):
         await ctx.channel.purge(limit=amount)
 
-    # kick and ban
-    @commands.command()
+    # kick
+    @commands.command(hidden=True)
+    @commands.has_permissions(administrator=True)
     async def kick(self, ctx, member: discord.Member, *, reason=None):
         await member.kick(reason=reason)
         await ctx.send('Kicked user {}'.format(member.mention))
 
-    @commands.command()
+    # ban
+    @commands.command(hidden=True)
+    @commands.has_permissions(administrator=True)
     async def ban(self, ctx, member: discord.Member, *, reason=None):
         await member.ban(reason=reason)
         await ctx.send('Banned user {}'.format(member.mention))
 
     # unban
-    @commands.command()
+    @commands.command(hidden=True)
+    @commands.has_permissions(administrator=True)
     async def unban(self, ctx, *, member):
         banned_users = await ctx.guild.bans()
 
