@@ -16,9 +16,9 @@ Ideas of function for this bot
 * Welcome message on user joining  
     * ~~Displays a welcoming message~~ 
     * ~~With message display a pic~~ 
-    * Or a gif
+    * ~~Or a gif~~
     * Add a helpful tip to footer f.ex what is the prefix
-    * Send joined member a private message? 
+    * Send joined member a private message??? 
     * Randomize a welcoming message
 * Embedded messages
     * ~~In welcome message~~
@@ -26,7 +26,7 @@ Ideas of function for this bot
 * Make a help commands to show all the commands + explanations
     * Either modify old one
         * By adding *brief* & *description* to *command()*
-    * Or make a brand new one
+    * Or make a brand new one help menu
 * Add errors for necessary commands or actions
     * And error for every command/action would be great - but probably not necessary
 * Chika can give a cola
@@ -57,6 +57,7 @@ Ideas of function for this bot
 * Send DM
 * Add config file for config stuff
     * For example token
+    * If I want to store to database then database config
 * Change users nickname??
     * Either a specific one or a random??
 
@@ -64,7 +65,7 @@ Ideas of function for this bot
 ##### Stuff for later
 * Make bot run in Docker container
 * Deploy to [heroku](https://www.heroku.com/)
-    * It has a free plane for hobbyist!
+    * It has a free plan for hobbyist!
     
 ## How to run locally
 Running locally you need to Python 3.7, pip 20.0.2 and pipenv==2018.11.26. (These are the versions I used to make
