@@ -46,7 +46,7 @@ Ideas of function for this bot
     * When giving a commands bot will spam gif or a pic
 * ~~Move code commands & events to cogs~~
     * ~~For code tidiness~~
-* Store data (mayba)
+* Store data (maybe)
     * For example users
     * How many messages was sent
 * Role specific commands
@@ -56,10 +56,14 @@ Ideas of function for this bot
         * ~~ban, unban, kick for admin only~~
 * Send DM
 * Add config file for config stuff
-    * For example token
+    * ~~For example token~~
     * If I want to store to database then database config
 * Change users nickname??
     * Either a specific one or a random??
+* Automatically assign role
+    * This can be via join
+    * Reacting to a post with emote
+    * With commands
 
 
 ##### Stuff for later
