@@ -41,7 +41,7 @@ class CogsCommands(commands.Cog):
     @commands.Cog.listener()
     async def on_command_error(self, ctx, error):
         if isinstance(error, commands.MissingRequiredArgument):
-            embed = discord.Embed(title='', description=f'Dont forget to specify the cog!')
+            embed = discord.Embed(title='', description=f'Dont forget to specify the argument!')
             await ctx.send(embed=embed)
 
 
