@@ -42,8 +42,10 @@ Ideas of function for this bot
     * ~~Mention user and the bonging person~~
     * ~~If no user was tagged give an error~~
 * Add daily a image related to Chika anime
+    * Need to choose a source for this???
 * Randomly spams a Chika gif or pic
     * When giving a commands bot will spam gif or a pic
+    * Source???
 * ~~Move code commands & events to cogs~~
     * ~~For code tidiness~~
 * Store data (maybe)
@@ -64,12 +66,21 @@ Ideas of function for this bot
     * This can be via join
     * Reacting to a post with emote
     * With commands
-
+* Reddit
+    * Make post daily posts from specific subreddit
+        * ~~From /r/ChikaFujiwara/~~~
+    * A user can assign a bot to post new posts from subreddit
+        * This prob has to be restricted to how many user can make
+* Steam???
+* Twitter???
+* Make a Trello board of this
+    * This is getting pretty messy - Trello could make it easier to read
 
 ##### Stuff for later
 * Make bot run in Docker container
 * Deploy to [heroku](https://www.heroku.com/)
     * It has a free plan for hobbyist!
+    * Make it to deploy newest version from [Github](https://github.com/)
     
 ## How to run locally
 Running locally you need to Python 3.7, pip 20.0.2 and pipenv==2018.11.26. (These are the versions I used to make
@@ -86,7 +97,7 @@ Pipenv can be installed via this [link](https://pipenv-fork.readthedocs.io/en/la
 
 ### `Running bot locally`  
 Finally when you have everything installed you can build this project and run locally. 
-* This will be updated! Currently no instructions on how to run locally.
+* This will be updated! Currently no instructions on how to run locally!!!
 
 Firstly create a token.txt where you will store your bots token. This file is excluded from GitHub repository because
  bots have uniques tokens.  
