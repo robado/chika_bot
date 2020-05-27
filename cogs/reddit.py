@@ -90,7 +90,7 @@ class RedditPosts(commands.Cog):
                         embed.set_image(url='{}'.format(posts.url))
                         embed.set_footer(text='Ups: {}'.format(posts.ups))
                         await channel.send(embed=embed)
-                await asyncio.sleep(10)
+                await asyncio.sleep(30)
 
 
 def setup(chika):
