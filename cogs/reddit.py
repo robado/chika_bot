@@ -62,38 +62,38 @@ class RedditPosts(commands.Cog):
                                     inline=True)
                     embed.set_footer(text='Ups: {}'.format(posts.ups))
                     await channel.send(embed=embed)
-                    if posts.is_self == False and posts.is_reddit_media_domain == True:
-                        if posts.over_18 == True:
-                            embed = discord.Embed(title='New image post on {}'.format(posts.subreddit_name_prefixed),
-                                                  url=posts.url,
-                                                  colour=colour)
-                            embed.set_author(name='{}'.format(posts.title),
-                                             url='{}{}'.format(os.environ.get("REDDIT_BASE_URL"), posts.permalink))
-                            embed.add_field(name='Author',
-                                            value='{}'.format(posts.author),
-                                            inline=True)
-                            embed.add_field(name='NSFW',
-                                            value='{}'.format(posts.over_18),
-                                            inline=True)
-                            embed.set_footer(text='Ups: {}'.format(posts.ups))
-                            await channel.send(embed=embed)
-                        else:
-                            embed = discord.Embed(title='New image post on {}'.format(posts.subreddit_name_prefixed),
-                                                  url=posts.url,
-                                                  colour=colour)
-                            embed.set_author(name='{}'.format(posts.title),
-                                             url='{}{}'.format(os.environ.get("REDDIT_BASE_URL"), posts.permalink))
-                            #  embed.set_thumbnail(url='') <- if i want to use "compact mode" use thumbnail instead of
-                            #  large pick
-                            embed.add_field(name='Author',
-                                            value='{}'.format(posts.author),
-                                            inline=True)
-                            embed.add_field(name='NSFW',
-                                            value='{}'.format(posts.over_18),
-                                            inline=True)
-                            embed.set_image(url='{}'.format(posts.url))
-                            embed.set_footer(text='Ups: {}'.format(posts.ups))
-                            await channel.send(embed=embed)
+                if posts.is_self == False and posts.is_reddit_media_domain == True:
+                    if posts.over_18 == True:
+                        embed = discord.Embed(title='New image post on {}'.format(posts.subreddit_name_prefixed),
+                                              url=posts.url,
+                                              colour=colour)
+                        embed.set_author(name='{}'.format(posts.title),
+                                         url='{}{}'.format(os.environ.get("REDDIT_BASE_URL"), posts.permalink))
+                        embed.add_field(name='Author',
+                                        value='{}'.format(posts.author),
+                                        inline=True)
+                        embed.add_field(name='NSFW',
+                                        value='{}'.format(posts.over_18),
+                                        inline=True)
+                        embed.set_footer(text='Ups: {}'.format(posts.ups))
+                        await channel.send(embed=embed)
+                    else:
+                        embed = discord.Embed(title='New image post on {}'.format(posts.subreddit_name_prefixed),
+                                              url=posts.url,
+                                              colour=colour)
+                        embed.set_author(name='{}'.format(posts.title),
+                                         url='{}{}'.format(os.environ.get("REDDIT_BASE_URL"), posts.permalink))
+                        #  embed.set_thumbnail(url='') <- if i want to use "compact mode" use thumbnail instead of
+                        #  large pick
+                        embed.add_field(name='Author',
+                                        value='{}'.format(posts.author),
+                                        inline=True)
+                        embed.add_field(name='NSFW',
+                                        value='{}'.format(posts.over_18),
+                                        inline=True)
+                        embed.set_image(url='{}'.format(posts.url))
+                        embed.set_footer(text='Ups: {}'.format(posts.ups))
+                        await channel.send(embed=embed)
 
 
 def setup(chika):
