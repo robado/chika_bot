@@ -30,12 +30,13 @@ class RedditPosts(commands.Cog):
         await self.chika.wait_until_ready()
         print("Starting reddit")
         # praw config - prob can make in a different method
+        # reddit = praw.Reddit() # Couldn't not make praw.ini work
         reddit = praw.Reddit(client_id=os.getenv("CLIENT_ID"),
                              client_secret=os.getenv("CLIENT_SECRET"),
                              password=os.getenv("PASSWORD"),
                              user_agent=os.getenv("USER_AGENT"),
                              username=os.environ.get("REDDIT_USERNAME"))
-        channel = self.chika.get_channel(688790390676914334)  # specific channel
+        channel = self.chika.get_channel(int(os.environ.get("DISCORD_BOT_SPAM_CHANNEL_ID")))  # specific channel
         colour = discord.colour.Color.red()
         # Get the post
         for posts in reddit.subreddit(os.environ.get("SUBREDDIT")).stream.submissions(pause_after=0):
@@ -93,7 +94,6 @@ class RedditPosts(commands.Cog):
                             embed.set_image(url='{}'.format(posts.url))
                             embed.set_footer(text='Ups: {}'.format(posts.ups))
                             await channel.send(embed=embed)
-                await asyncio.sleep(60)
 
 
 def setup(chika):
