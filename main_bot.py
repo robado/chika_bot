@@ -14,7 +14,7 @@ command_prefix = 'chika'
 chika = commands.Bot(command_prefix=command_prefix)
 TOKEN = os.getenv("TOKEN")
 
-logging.basicConfig(level=logging.INFO) # DEBUG
+logging.basicConfig(level=logging.INFO)  # DEBUG
 
 # get all the cogs
 for filename in os.listdir('./cogs'):
