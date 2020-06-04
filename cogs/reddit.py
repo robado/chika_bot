@@ -41,7 +41,7 @@ class RedditPosts(commands.Cog):
         channel = self.chika.get_channel(int(os.environ.get("DISCORD_CHANNEL_ID")))  # specific channel
         colour = discord.colour.Color.red()
 
-        while not chika.is_closed:
+        while not self.chika.is_closed:
             # Get the post
             for posts in reddit.subreddit(os.environ.get("SUBREDDIT")).stream.submissions(pause_after=0):
                 if posts is None:
