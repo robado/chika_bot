@@ -70,7 +70,6 @@ class RedditPosts(commands.Cog):
                                     inline=True)
                     embed.set_footer(text='Ups: {}'.format(posts.ups))
                     await channel.send(embed=embed)
-                    await asyncio.sleep(60)
                 if posts.is_self == False and posts.is_reddit_media_domain == True:
                     if posts.over_18 == True:
                         print("A new K-18 image post was posted with id: {}".format(posts.id))
@@ -87,7 +86,6 @@ class RedditPosts(commands.Cog):
                                         inline=True)
                         embed.set_footer(text='Ups: {}'.format(posts.ups))
                         await channel.send(embed=embed)
-                        await asyncio.sleep(60)
                     else:
                         print("A new image post was posted with id: {}".format(posts.id))
                         embed = discord.Embed(title='{}'.format(posts.title),
@@ -106,7 +104,6 @@ class RedditPosts(commands.Cog):
                         embed.set_image(url='{}'.format(posts.url))
                         embed.set_footer(text='Ups: {}'.format(posts.ups))
                         await channel.send(embed=embed)
-                        await asyncio.sleep(60)
             # await asyncio.sleep(60) # This didnt work and still sends multiple of the same post
 
 def setup(chika):
