@@ -104,19 +104,26 @@ Pipenv can be installed via this [link](https://packaging.python.org/guides/inst
 Finally when you have everything installed you can build this project and run locally. 
 
 First download the code.
-> git clone https://github.com/robado/chika_bot.git
+```
+git clone https://github.com/robado/chika_bot.git
+```
 
 After code is downloaded install virtual environment for the project.
-> cd chika_bot/
-**linux:** python3 -m venv bot-env / **windows:** python -m venv bot-env
+```
+cd chika_bot/
+linux: python3 -m venv bot-env / windows: python -m venv bot-env
+```
 
 Then activate the virtual environment and install the necessary packages.
-> **Linux:** source bot-env/bin/activate / **Windows:** .\bot-env\Scripts\activate
-> **Linux:** pip install -r requirements.txt / **Windows:** pip install -r requirements.txt 
+```
+**Linux:** source bot-env/bin/activate / **Windows:** .\bot-env\Scripts\activate
+**Linux:** pip install -r requirements.txt / **Windows:** pip install -r requirements.txt 
+```
 
 After the installation in complete the bot can be ran. Change these values with your own.
-> Linux: python3 main.py / Windows: python main_bot.py
-
+```
+Linux: python3 main.py / Windows: python main_bot.py
+```
 In the file config/.env is stored the Discord bot's token. 
 ```
 TOKEN=<TOKEN>
