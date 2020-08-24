@@ -116,8 +116,8 @@ linux: python3 -m venv bot-env / windows: python -m venv bot-env
 
 Then activate the virtual environment and install the necessary packages.
 ```
-**Linux:** source bot-env/bin/activate / **Windows:** .\bot-env\Scripts\activate
-**Linux:** pip install -r requirements.txt / **Windows:** pip install -r requirements.txt 
+Linux: source bot-env/bin/activate / Windows: .\bot-env\Scripts\activate
+Linux: pip install -r requirements.txt / Windows: pip install -r requirements.txt 
 ```
 
 After the installation in complete the bot can be ran. Change these values with your own.
