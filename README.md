@@ -102,9 +102,39 @@ Pipenv can be installed via this [link](https://packaging.python.org/guides/inst
 
 ### `Running bot locally`  
 Finally when you have everything installed you can build this project and run locally. 
-* This will be updated! Currently no instructions on how to run locally!!!
 
-In the file config/.env is stored the Discord bot's token.  
+First download the code.
+> git clone https://github.com/robado/chika_bot.git
+
+After code is downloaded install virtual environment for the project.
+> cd chika_bot/
+**linux:** python3 -m venv bot-env / **windows:** python -m venv bot-env
+
+Then activate the virtual environment and install the necessary packages.
+> **Linux:** source bot-env/bin/activate / **Windows:** .\bot-env\Scripts\activate
+> **Linux:** pip install -r requirements.txt / **Windows:** pip install -r requirements.txt 
+
+After the installation in complete the bot can be ran. Change these values with your own.
+> Linux: python3 main.py / Windows: python main_bot.py
+
+In the file config/.env is stored the Discord bot's token. 
+```
+TOKEN=<TOKEN>
+
+#Discord channel ids
+DISCORD_CHANNEL_ID=<channel id> # This is for the bot-spam channel id
+
+# reddit config
+CLIENT_ID=<CLIENT_ID>
+CLIENT_SECRET=<CLIENT_SECRET>
+PASSWORD=<PASSWORD>
+USER_AGENT=<USER_AGENT>
+REDDIT_USERNAME=<REDDIT_USERNAME>
+
+SUBREDDIT=<SUBREDDIT>
+REDDIT_BASE_URL=<REDDIT_BASE_URL>
+```
+
 ## Useful links
 * [Discord.py documentation](https://discordpy.readthedocs.io/en/latest/)
 * [Helpful youtube tutorial by Lucas](https://www.youtube.com/watch?v=nW8c7vT6Hl4&list=PLW3GfRiBCHOhfVoiDZpSz8SM_HybXRPzZ)
