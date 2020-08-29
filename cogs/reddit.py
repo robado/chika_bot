@@ -59,27 +59,10 @@ class RedditPosts(commands.Cog):
                     print("Id: {} was not duplicate. Clearing and updating list!".format(posts.id))
                     duplicate_check_list.clear()
                     duplicate_check_list.append(posts.id)
-                    if posts.is_self == True and posts.is_reddit_media_domain == False:
+                    if posts.is_self == True and posts.is_reddit_media_domain == False and posts.is_video == False: # If text only
                         print("A new text post was posted with id: {}".format(posts.id))
-                        # if posts.over_18 == True:
-                        #     print("Content is over_18")
-                        embed = discord.Embed(title='{}'.format(posts.title),
-                                            url=posts.url,
-                                            # description='{}'.format(posts.selftext),
-                                            description='{}'.format((posts.selftext[:2045] + '...') if len(
-                                                posts.selftext) > 2048 else posts.selftext),
-                                            colour=colour)
-                        embed.set_author(name='New text post on {}'.format(posts.subreddit_name_prefixed),
-                                        url='{}'.format(posts.url))
-                        embed.add_field(name='Author',
-                                        value='{}'.format(posts.author),
-                                        inline=True)
-                        embed.add_field(name='NSFW',
-                                        value='{}'.format(posts.over_18),
-                                        inline=True)
-                        embed.set_footer(text='Ups: {}'.format(posts.ups))
-                        await channel.send(embed=embed)
-                    if posts.is_self == False and posts.is_reddit_media_domain == True:
+                        await channel.send(embed=embed_maker(posts.title, posts.url, posts.selftext, colour, posts.subreddit_name_prefixed, posts.author, posts.over_18, posts.ups)) # This is much cleaner ....
+                    if posts.is_self == False and posts.is_reddit_media_domain == True and posts.is_video == False:  # If image:
                         if posts.over_18 == True:
                             print("A new K-18 image post was posted with id: {}".format(posts.id))
                             embed = discord.Embed(title='{}'.format(posts.title),
@@ -113,7 +96,42 @@ class RedditPosts(commands.Cog):
                             embed.set_image(url='{}'.format(posts.url))
                             embed.set_footer(text='Ups: {}'.format(posts.ups))
                             await channel.send(embed=embed)
+                    if posts.is_self == False and posts.is_reddit_media_domain == True and posts.is_video == True:  # If video
+                        post_dict = vars(posts)
+                        print("A new video post was posted with id: {}".format(posts.id))
+                        embed = discord.Embed(title='{}'.format(posts.title),
+                                            url='{}{}'.format(os.environ.get("REDDIT_BASE_URL"), posts.permalink),
+                                            colour=colour)
+                        embed.set_author(name='New video post on {}'.format(posts.subreddit_name_prefixed),
+                                        url=posts.url)
+                        embed.add_field(name='Author',
+                                        value='{}'.format(posts.author),
+                                        inline=True)
+                        embed.add_field(name='NSFW',
+                                        value='{}'.format(posts.over_18),
+                                        inline=True)
+                        embed.set_image(url='{}'.format(post_dict['preview']['images'][0]['source']['url'])) # I could getting the data like this in every place...
+                        embed.set_footer(text='Ups: {}'.format(posts.ups))
+                        await channel.send(embed=embed)
             # await asyncio.sleep(60) # This didnt work and still sends multiple of the same post
 
 def setup(chika):
     chika.add_cog(RedditPosts(chika))
+
+# This could make with optional arguments so any embed for reddit would be valid here
+def embed_maker(post_title, post_url, post_selftext, embed_colour, subreddit_name_prefixed, posts_author, post_over_18, post_ups):
+    embed = discord.Embed(title='{}'.format(post_title),
+                        url=post_url,
+                        description='{}'.format((post_selftext[:2045] + '...') if len(
+                            post_selftext) > 2048 else post_selftext),
+                        colour=embed_colour)
+    embed.set_author(name='New text post on {}'.format(subreddit_name_prefixed),
+                    url='{}'.format(post_url))
+    embed.add_field(name='Author',
+                    value='{}'.format(posts_author),
+                    inline=True)
+    embed.add_field(name='NSFW',
+                    value='{}'.format(post_over_18),
+                    inline=True)
+    embed.set_footer(text='Ups: {}'.format(post_ups))
+    return embed
